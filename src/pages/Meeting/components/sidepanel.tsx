@@ -22,7 +22,7 @@ function SidePanel({
     return (
       <div
         className={cn(
-          "bg-secondary rounded-lg self-center transition-[flex-basis] duration-700 ease-out",
+          "bg-secondary rounded-lg self-center transition-[flex-basis] duration-700 ease-in",
           !showSidePanel ? "basis-0" : "basis-[450px]",
         )}
         style={{

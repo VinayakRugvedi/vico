@@ -59,56 +59,53 @@ function Controls({
   };
 
   return (
-    <div className="flex justify-center items-center gap-4 py-4 flex-wrap">
+    <div className="flex justify-center items-center gap-3 sm:gap-4 py-4 flex-wrap">
       <Button
-        className="rounded-full h-10 w-10 sm:h-12 sm:w-12"
+        className="rounded-full h-12 w-12"
         onClick={() => updateParticipants()}
         disabled={participantsCount === MAX_PARTICIPANTS ? true : false}
       >
         <span>
-          <UserPlus className="h-4 w-4 sm:h-5 sm:w-5" />
+          <UserPlus className="h-5 w-5" />
         </span>
       </Button>
 
       <Button
-        className="rounded-full h-10 w-10 sm:h-12 sm:w-12"
+        className="rounded-full h-12 w-12"
         onClick={() => updateParticipants(true)}
         disabled={participantsCount === 1 ? true : false}
       >
         <span>
-          <UserMinus className="h-4 w-4 sm:h-5 sm:w-5" />
+          <UserMinus className="h-5 w-5" />
         </span>
       </Button>
 
-      <Button
-        className="rounded-full h-10 w-10 sm:h-12 sm:w-12"
-        onClick={handleSidePanelState}
-      >
+      <Button className="rounded-full h-12 w-12" onClick={handleSidePanelState}>
         <span>
           {showSidePanel ? (
-            <PanelRightClose className="h-4 w-4 sm:h-5 sm:w-5" />
+            <PanelRightClose className="h-5 w-5" />
           ) : (
-            <PanelRightOpen className="h-4 w-4 sm:h-5 sm:w-5" />
+            <PanelRightOpen className="h-5 w-5" />
           )}
         </span>
       </Button>
 
       <Select value={participantAspectRatio.name} onValueChange={onValueChange}>
-        <SelectTrigger className="rounded-full border border-primary w-24 h-10 sm:h-12">
+        <SelectTrigger className="rounded-full border border-primary w-20 sm:w-24 h-12">
           <SelectValue />
         </SelectTrigger>
         <SelectContent className="dark">{aspectRatioOptions}</SelectContent>
       </Select>
 
       <Button
-        className="rounded-full h-10 w-10 sm:h-12 sm:w-12"
+        className="rounded-full h-12 w-12"
         onClick={handleParticipantVidoesState}
       >
         <span>
           {showAllVideos ? (
-            <VideoOff className="h-4 w-4 sm:h-5 sm:w-5" />
+            <VideoOff className="h-5 w-5" />
           ) : (
-            <Video className="h-4 w-4 sm:h-5 sm:w-5" />
+            <Video className="h-5 w-5" />
           )}
         </span>
       </Button>

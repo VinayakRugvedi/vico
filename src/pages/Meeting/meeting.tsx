@@ -193,6 +193,7 @@ function Meeting() {
     participantsCount - maxVisibleParticipants <= 0
       ? 0
       : participantsCount - maxVisibleParticipants;
+
   const content = [];
   for (
     let i = 0;
@@ -223,7 +224,12 @@ function Meeting() {
 
   return (
     <div className="w-full h-full flex justify-center items-center flex-col gap-4">
-      <div className={cn("w-full h-full flex", showSidePanel ? "gap-4" : "")}>
+      <div
+        className={cn(
+          "w-full h-full flex overflow-hidden",
+          showSidePanel ? "gap-4" : "",
+        )}
+      >
         <div
           className="flex justify-center items-center w-full h-full relative"
           ref={hallRef}

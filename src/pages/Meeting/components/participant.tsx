@@ -45,9 +45,10 @@ function Participant({
 
   return (
     <div
-      className={`aspect-[${aspectRatio.width}/${aspectRatio.height}] aspect-video block rounded-lg bg-secondary p-4 relative`}
+      className={`block rounded-lg bg-secondary p-4 relative`}
       style={{
         height: `${height - 16}px`,
+        aspectRatio: `${aspectRatio.width}/${aspectRatio.height}`,
       }}
     >
       <div className="w-full h-full flex items-center justify-center">
