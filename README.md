@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# ViCo - Video Conferencing UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The objective of this project is to develop a dynamic user interface for a video conferencing platform, inspired by the grid layout observed in prominent platforms. The solution addresses key features such as dynamic video grid, aspect ratio handling, sidebar functionality, rendering heavy components, and adding animations.
 
-Currently, two official plugins are available:
+## Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To set up and run the project locally, follow these steps:
 
-## Expanding the ESLint configuration
+1. Clone the repository -
+   `git clone git@github.com:VinayakRugvedi/vico.git`
+2. `cd vico`
+3. `yarn install`
+4. `yarn dev`
+5. Open your browser and visit http://localhost:5173 to view the project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Demo
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+A live demo of the project can be accessed at https://vico-delta.vercel.app/
