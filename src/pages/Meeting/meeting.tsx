@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { UsersRound } from "lucide-react";
 
 import { Controls, Participant, SidePanel } from "./components";
+import { useToast } from "components";
 import { cn } from "utils/lib";
 import { generateParticipants } from "utils/mock";
 import {
@@ -51,6 +52,7 @@ function Meeting() {
     },
   });
 
+  const { toast } = useToast();
   const hallRef = useRef<HTMLDivElement>(null);
   const { showSidePanel, participantAspectRatio } = hallSettings;
   const participantsCount = participants.length;
@@ -152,19 +154,28 @@ function Meeting() {
     if (isDeleting && participantsCount <= 1) return;
 
     const participantsCopy = [...participants];
+    let participantInConcern = {} as ParticipantData;
     if (!isDeleting) {
-      participantsCopy.push(generateParticipants(1)[0]);
       if (participantsCount === MAX_PARTICIPANTS) return;
+      participantInConcern = generateParticipants(1)[0];
+      participantsCopy.push(participantInConcern);
     } else {
       const visibleParticipantsCount = Math.min(
         participantsCount,
         maxVisibleParticipants,
       );
       const deleteIndex = Math.random() * visibleParticipantsCount;
-      participantsCopy.splice(deleteIndex, 1);
+      participantInConcern = participantsCopy.splice(deleteIndex, 1)[0];
     }
 
     setParticipants([...participantsCopy]);
+    isDeleting
+      ? toast({
+          description: `${participantInConcern.name} left the meeting.`,
+        })
+      : toast({
+          description: `${participantInConcern.name} joined the meeting.`,
+        });
   };
 
   const updateParticipantAspectRatio = (aspectRatioName: AspectRatioNames) => {
