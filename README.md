@@ -16,3 +16,9 @@ To set up and run the project locally, follow these steps:
 ## Demo
 
 A live demo of the project can be accessed at https://vico-delta.vercel.app/
+
+## Technology Stack
+
+- TypeScript
+- React
+- TailwindCSS
