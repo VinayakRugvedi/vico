@@ -22,3 +22,7 @@ A live demo of the project can be accessed at https://vico-delta.vercel.app/
 - TypeScript
 - React
 - TailwindCSS
+
+## Further Action
+
+One possible performance enhancement could be achieved by preserving/caching previously computed dimensions along with the extrapolated values within the range of the participant. By caching these values, we can avoid redundant calculations and optimize the rendering process.
