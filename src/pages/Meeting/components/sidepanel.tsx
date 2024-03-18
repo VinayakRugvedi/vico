@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { X, Wand } from "lucide-react";
 
 import { Button } from "components";
@@ -18,18 +19,26 @@ function SidePanel({
   hallWidth,
   handleSidePanelState,
 }: PropTypes) {
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  useEffect(() => {
+    if (!showSidePanel) {
+      setIsAnimationComplete(false);
+    }
+  }, [showSidePanel]);
+
   if (hallWidth >= 750) {
     return (
       <div
         className={cn(
-          "bg-secondary rounded-lg self-center transition-[flex-basis] duration-700 ease-in",
+          "bg-secondary rounded-lg self-center transition-[flex-basis] duration-500 ease-in",
           !showSidePanel ? "basis-0" : "basis-[450px]",
         )}
+        onTransitionEnd={() => showSidePanel && setIsAnimationComplete(true)}
         style={{
           height: `${hallHeight - 16}px`,
         }}
       >
-        {showSidePanel && (
+        {showSidePanel && isAnimationComplete && (
           <div className="h-full">
             <div className="w-full flex items-center justify-between p-4 border-b border-primary/30">
               <h6 className="text-lg font-medium">Side Panel</h6>
